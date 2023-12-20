@@ -26,37 +26,45 @@ const MainTvPoster = ({ data }: { data: IGetTvsResult | undefined }) => {
 export default MainTvPoster;
 
 const Banner = styled.div<{ bgPhoto: string }>`
-  height: 62.5vw;
+  height: 56.25vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 40px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+  padding: 60px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.8)
+    ),
     url(${(props) => props.bgPhoto});
   background-size: cover;
+  background-position: center center;
   padding-bottom: 250px;
 `;
 
 const Title = styled.h2`
-  font-size: 68px;
+  font-size: 48px;
   margin-bottom: 20px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 const Overview = styled.p`
-  font-size: 24px;
+  font-size: 18px;
   width: 50%;
+  font-weight: 400;
 `;
+
 const Button = styled.div`
-  width: 200px;
-  height: 70px;
-  border: 2px solid white;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  border-radius: 24px;
-  margin-top: 50px;
+  font-size: 18px;
+  margin-top: 30px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
+  border-radius: 5px;
 `;

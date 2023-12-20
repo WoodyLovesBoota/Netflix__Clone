@@ -44,10 +44,8 @@ const Tv = () => {
 
 export default Tv;
 
-// Styled Components
 const Wrapper = styled.div`
   background-color: black;
-  height: 150vh;
   overflow-x: hidden;
 `;
 
@@ -61,4 +59,5 @@ const Loader = styled.div`
 const Slider = styled.div`
   margin-top: -50px;
   position: relative;
+  padding-left: 60px;
 `;

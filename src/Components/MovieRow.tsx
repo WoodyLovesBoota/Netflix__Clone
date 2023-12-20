@@ -94,14 +94,11 @@ export default MovieRow;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 330px;
-  position: relative;
-
+  margin-bottom: 250px;
   h2 {
-    position: absolute;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 400;
+    color: lightgray;
   }
 `;
 
@@ -115,6 +112,7 @@ const Info = styled(motion.div)`
   h4 {
     text-align: center;
     font-size: 16px;
+    font-weight: 500;
   }
 `;
 
@@ -126,16 +124,16 @@ const SlideButton = styled(motion.div)<{ left: boolean }>`
     rgba(0, 0, 0, 1)
   );
   opacity: 0;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 800;
-  height: 200px;
+  height: calc((100vw - 120px) / 6 * 9 / 16);
   width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   right: ${(props) => (props.left ? 100 : 0)};
-  top: 50px;
+  top: 30px;
   cursor: pointer;
 `;
 
@@ -145,18 +143,17 @@ const Row = styled(motion.div)`
   gap: 5px;
   width: 100%;
   position: absolute;
-  height: 200px;
-  top: 50px;
+  top: 30px;
 `;
 
 const Box = styled(motion.div)<{ bgPhoto: string }>`
   background-color: white;
-  height: 200px;
-  font-size: 64px;
+  height: calc((100vw - 120px) / 6 * 9 / 16);
   background-image: url(${(props) => props.bgPhoto});
   background-size: cover;
   background-position: center center;
   position: relative;
+  border-radius: 5px;
   cursor: pointer;
   &:first-child {
     transform-origin: center left;
@@ -182,8 +179,8 @@ const boxVariants = {
   normal: { scale: 1 },
   hover: {
     zIndex: 99,
-    scale: 1.2,
-    y: -50,
+    scale: 1,
+    y: -20,
     borderRadius: 10,
     transition: { duration: 0.5, type: "spring" },
   },

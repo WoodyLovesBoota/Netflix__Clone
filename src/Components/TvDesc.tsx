@@ -115,10 +115,11 @@ const TvDesc = ({ data, title }: { data: IGetTvsResult | undefined; title: strin
 };
 
 export default TvDesc;
-
 const DescContainer = styled.div`
   width: 100%;
   display: flex;
+  border-radius: 6px;
+  font-size: 14px;
 `;
 
 const Column = styled.div`
@@ -128,27 +129,36 @@ const Column = styled.div`
   &:last-child {
     width: 30%;
   }
+  border-radius: 6px;
 `;
 
 const BigMovie = styled(motion.div)`
   position: fixed;
-  width: 35vw;
+  width: 600px;
   height: 90vh;
   top: 5vh;
   left: 0;
   right: 0;
   margin: 0 auto;
   background-color: ${(props) => props.theme.black.darker};
-  overflow: hidden;
-  border-radius: 15px;
   z-index: 100;
+  border-radius: 6px;
 `;
 
 const BigCover = styled.div`
   width: 100%;
-  height: 21.6vw;
+  height: 50%;
   background-position: center center;
   background-size: cover;
+  border-radius: 6px;
+`;
+
+const Poster = styled.img`
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  width: 150px;
+  border-radius: 6px;
 `;
 
 const BigTitle = styled.h2`
@@ -162,21 +172,13 @@ const BigTitle = styled.h2`
 
 const Rating = styled.p`
   color: ${(props) => props.theme.white.darker};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-right: 20px;
 `;
 
 const Date = styled.p`
   padding-right: 40px;
   color: ${(props) => props.theme.white.darker};
-  padding-right: 40px;
-`;
-
-const Poster = styled.img`
-  position: absolute;
-  top: 100px;
-  left: 40px;
-  width: 150px;
-  border-radius: 20px;
 `;
 
 const BigOverview = styled.p`
@@ -206,7 +208,7 @@ const StarRateWrap = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin: 0;
+  margin-bottom: 10px;
   span {
     display: inline-block;
     margin-right: 3px;

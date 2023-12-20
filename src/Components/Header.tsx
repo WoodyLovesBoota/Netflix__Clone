@@ -84,7 +84,6 @@ const Header = () => {
 
 export default Header;
 
-// Styled Components
 const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
@@ -92,10 +91,9 @@ const Nav = styled(motion.nav)`
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: black;
-  height: 80px;
+  height: 70px;
   font-size: 16px;
-  padding: 20px 40px;
+  padding: 20px 60px;
   color: white;
   z-index: 99;
 `;
@@ -128,6 +126,8 @@ const Item = styled.li`
   justify-content: center;
   flex-direction: column;
   position: relative;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 const Circle = styled(motion.span)`
@@ -145,7 +145,7 @@ const Circle = styled(motion.span)`
 const Search = styled.form`
   color: white;
   svg {
-    height: 25px;
+    height: 30px;
     cursor: pointer;
   }
   display: flex;
@@ -164,6 +164,7 @@ const Input = styled(motion.input)`
   border: none;
   color: white;
   font-size: 16px;
+  font-weight: 500;
 
   &:focus {
     outline: none;

@@ -87,15 +87,16 @@ const Search = () => {
 export default Search;
 
 const Wrapper = styled.div`
-  padding: 40px;
+  padding: 60px;
 `;
 
 const Container = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
+  font-weight: 600;
   color: white;
 `;
 const Info = styled(motion.div)`
@@ -108,6 +109,7 @@ const Info = styled(motion.div)`
   h4 {
     text-align: center;
     font-size: 16px;
+    font-weight: 500;
   }
 `;
 
