@@ -4,7 +4,8 @@ import { makeImagePath } from "../utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useRecoilState } from "recoil";
+import { screenState } from "../atom";
 import TvDesc from "./TvDesc";
 
 const offset = 6;
@@ -14,7 +15,9 @@ const TvRow = ({ data, title }: { data: IGetTvsResult | undefined; title: string
   const [leaving, setLeaving] = useState(false);
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
+  const [screen, setScreen] = useRecoilState(screenState);
 
+  const offset = screen === 0 ? 2 : screen === 1 ? 4 : 6;
   const increaseIndex = () => {
     if (data) {
       if (leaving) return;
@@ -96,11 +99,19 @@ export default TvRow;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 250px;
+  margin-bottom: calc(20px + (100vw - 100px) / 6 * 9 / 16);
+  position: relative;
+
   h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
     color: lightgray;
+  }
+  @media screen and (max-width: 1200px) {
+    margin-bottom: calc(20px + (100vw - 60px) / 4 * 9 / 16);
+  }
+  @media screen and (max-width: 800px) {
+    margin-bottom: calc(20px + (100vw - 32px) / 2 * 9 / 16);
   }
 `;
 
@@ -126,17 +137,23 @@ const SlideButton = styled(motion.div)<{ left: boolean }>`
     rgba(0, 0, 0, 1)
   );
   opacity: 0;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 800;
   height: calc((100vw - 120px) / 6 * 9 / 16);
-  width: 100px;
+  width: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: ${(props) => (props.left ? 100 : 0)};
   top: 30px;
+  right: ${(props) => (props.left ? 100 : 0)};
   cursor: pointer;
+  @media screen and (max-width: 1200px) {
+    height: calc((100vw - 60px) / 4 * 9 / 16);
+  }
+  @media screen and (max-width: 800px) {
+    height: calc((100vw - 32px) / 2 * 9 / 16);
+  }
 `;
 
 const Row = styled(motion.div)`
@@ -146,6 +163,12 @@ const Row = styled(motion.div)`
   width: 100%;
   position: absolute;
   top: 30px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Box = styled(motion.div)<{ bgPhoto: string }>`
@@ -155,13 +178,14 @@ const Box = styled(motion.div)<{ bgPhoto: string }>`
   background-size: cover;
   background-position: center center;
   position: relative;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
-  &:first-child {
-    transform-origin: center left;
+
+  @media screen and (max-width: 1200px) {
+    height: calc((100vw - 60px) / 4 * 9 / 16);
   }
-  &:last-child {
-    transform-origin: center right;
+  @media screen and (max-width: 800px) {
+    height: calc((100vw - 32px) / 2 * 9 / 16);
   }
 `;
 
@@ -170,7 +194,7 @@ const rowVariants = {
     x: (window.outerWidth + 5) * custom,
   }),
 
-  visible: { x: 0 },
+  visible: { x: 0, y: -0 },
 
   exit: (custom: number) => ({
     x: (-window.outerWidth - 5) * custom,

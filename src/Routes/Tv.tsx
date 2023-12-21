@@ -27,15 +27,17 @@ const Tv = () => {
       ) : (
         <>
           <MainTvPoster data={trendTv} />
-          <Slider>
-            <TvRow data={trendTv} title="Trending" />
-          </Slider>
-          <Slider>
-            <TvRow data={topRatedTv} title="Top Rated" />
-          </Slider>
-          <Slider>
-            <TvRow data={popularTv} title="Popular" />
-          </Slider>
+          <Rows>
+            <Slider>
+              <TvRow data={trendTv} title="Trending" />
+            </Slider>
+            <Slider>
+              <TvRow data={topRatedTv} title="Top Rated" />
+            </Slider>
+            <Slider>
+              <TvRow data={popularTv} title="Popular" />
+            </Slider>
+          </Rows>
         </>
       )}
     </Wrapper>
@@ -55,9 +57,23 @@ const Loader = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const Rows = styled.div`
+  margin-top: -50px;
+  @media screen and (max-width: 1200px) {
+    margin-top: -20px;
+  }
+  @media screen and (max-width: 800px) {
+    margin-top: -0px;
+  }
+`;
 
 const Slider = styled.div`
-  margin-top: -50px;
   position: relative;
   padding-left: 60px;
+  @media screen and (max-width: 1200px) {
+    padding-left: 30px;
+  }
+  @media screen and (max-width: 800px) {
+    padding-left: 16px;
+  }
 `;

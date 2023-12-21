@@ -44,18 +44,20 @@ const Home = () => {
       ) : (
         <>
           <MainPoster data={nowPlaying} />
-          <Slider>
-            <MovieRow data={nowPlaying} title="Now Playing" />
-          </Slider>
-          <Slider>
-            <MovieRow data={popular} title="Popular" />
-          </Slider>
-          <Slider>
-            <MovieRow data={topRated} title="Top Rated" />
-          </Slider>
-          <Slider>
-            <MovieRow data={upComing} title="Up Coming" />
-          </Slider>
+          <Rows>
+            <Slider>
+              <MovieRow data={nowPlaying} title="Now Playing" />
+            </Slider>
+            <Slider>
+              <MovieRow data={popular} title="Popular" />
+            </Slider>
+            <Slider>
+              <MovieRow data={topRated} title="Top Rated" />
+            </Slider>
+            <Slider>
+              <MovieRow data={upComing} title="Up Coming" />
+            </Slider>
+          </Rows>
         </>
       )}
     </Wrapper>
@@ -77,8 +79,23 @@ const Loader = styled.div`
   align-items: center;
 `;
 
-const Slider = styled.div`
+const Rows = styled.div`
   margin-top: -50px;
+  @media screen and (max-width: 1200px) {
+    margin-top: -20px;
+  }
+  @media screen and (max-width: 800px) {
+    margin-top: -0px;
+  }
+`;
+
+const Slider = styled.div`
   position: relative;
   padding-left: 60px;
+  @media screen and (max-width: 1200px) {
+    padding-left: 30px;
+  }
+  @media screen and (max-width: 800px) {
+    padding-left: 16px;
+  }
 `;

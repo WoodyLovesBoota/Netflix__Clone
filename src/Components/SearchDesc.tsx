@@ -125,11 +125,15 @@ const SearchDesc = ({
 };
 
 export default SearchDesc;
+
 const DescContainer = styled.div`
   width: 100%;
   display: flex;
   border-radius: 6px;
   font-size: 14px;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Column = styled.div`
@@ -138,6 +142,14 @@ const Column = styled.div`
   }
   &:last-child {
     width: 30%;
+  }
+  @media screen and (max-width: 800px) {
+    &:first-child {
+      width: 100%;
+    }
+    &:last-child {
+      width: 100%;
+    }
   }
   border-radius: 6px;
 `;
@@ -153,6 +165,9 @@ const BigMovie = styled(motion.div)`
   background-color: ${(props) => props.theme.black.darker};
   z-index: 100;
   border-radius: 6px;
+  @media screen and (max-width: 800px) {
+    width: 80vw;
+  }
 `;
 
 const BigCover = styled.div`
@@ -169,6 +184,9 @@ const Poster = styled.img`
   left: 40px;
   width: 150px;
   border-radius: 6px;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const BigTitle = styled.h2`
@@ -184,11 +202,18 @@ const Rating = styled.p`
   color: ${(props) => props.theme.white.darker};
   margin-bottom: 10px;
   padding-right: 20px;
+  @media screen and (max-width: 800px) {
+    padding: 0 40px;
+  }
 `;
 
 const Date = styled.p`
   padding-right: 40px;
   color: ${(props) => props.theme.white.darker};
+  @media screen and (max-width: 800px) {
+    padding: 0 40px;
+    display: flex;
+  }
 `;
 
 const BigOverview = styled.p`
@@ -202,14 +227,19 @@ const Genre = styled.p`
   color: ${(props) => props.theme.white.darker};
   padding-right: 40px;
   margin-bottom: 20px;
+  @media screen and (max-width: 800px) {
+    padding: 0 40px;
+    margin-bottom: 10px;
+  }
 `;
 
 const Overlay = styled(motion.div)`
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   z-index: 98;
 `;
@@ -222,5 +252,8 @@ const StarRateWrap = styled.div`
   span {
     display: inline-block;
     margin-right: 3px;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 20px 40px;
   }
 `;

@@ -24,9 +24,15 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 16px;
   font: inherit;
   vertical-align: baseline;
+  @media screen and (max-width: 1200px) {
+      font-size: 14px;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+    }
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

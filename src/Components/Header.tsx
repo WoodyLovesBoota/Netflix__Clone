@@ -46,10 +46,14 @@ const Header = () => {
         </Logo>
         <Items>
           <Item>
-            <Link to={"/"}>Home {homeMatch && <Circle layoutId="circle" />}</Link>
+            <Link to={"/"}>
+              <ItemContent>Movies</ItemContent> {homeMatch && <Circle layoutId="circle" />}
+            </Link>
           </Item>
           <Item>
-            <Link to={"tv"}>TV Shows {tvMatch && <Circle layoutId="circle" />}</Link>
+            <Link to={"tv"}>
+              <ItemContent>TV Shows</ItemContent> {tvMatch && <Circle layoutId="circle" />}
+            </Link>
           </Item>
         </Items>
       </Col>
@@ -57,7 +61,7 @@ const Header = () => {
         <Search onClick={toggleSearch} onSubmit={handleSubmit(onValid)}>
           <motion.svg
             transition={{ type: "linear" }}
-            animate={{ x: searchOpen ? -280 : 0 }}
+            animate={{ x: searchOpen ? "-15.625rem" : 0 }}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +100,12 @@ const Nav = styled(motion.nav)`
   padding: 20px 60px;
   color: white;
   z-index: 99;
+  @media screen and (max-width: 1200px) {
+    padding: 20px 30px;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Col = styled.div`
@@ -104,9 +114,9 @@ const Col = styled.div`
 `;
 
 const Logo = styled(motion.svg)`
-  margin-right: 50px;
-  width: 95px;
-  height: 25px;
+  margin-right: 3.125rem;
+  width: 5.9375rem;
+  height: 1.5625rem;
   fill: ${(props) => props.theme.red};
   path {
     stroke-width: 10px;
@@ -120,13 +130,16 @@ const Items = styled.ul`
 `;
 
 const Item = styled.li`
-  margin-right: 20px;
+  margin-right: 1.25rem;
   color: ${(props) => props.theme.white.lighter};
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  font-size: 14px;
+`;
+
+const ItemContent = styled.span`
+  font-size: 16px;
   font-weight: 500;
 `;
 
@@ -145,7 +158,7 @@ const Circle = styled(motion.span)`
 const Search = styled.form`
   color: white;
   svg {
-    height: 30px;
+    height: 1.875rem;
     cursor: pointer;
   }
   display: flex;
@@ -156,10 +169,10 @@ const Search = styled.form`
 const Input = styled(motion.input)`
   transform-origin: right center;
   position: absolute;
-  left: -250px;
+  left: -13.625rem;
   background-color: transparent;
-  height: 40px;
-  width: 250px;
+  height: 2.5rem;
+  width: 13.625rem;
   padding: 0 10px;
   border: none;
   color: white;
@@ -171,6 +184,12 @@ const Input = styled(motion.input)`
   }
   &::placeholder {
     color: lightgray;
+  }
+  @media screen and (max-width: 800px) {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
   }
 `;
 

@@ -35,36 +35,58 @@ const Banner = styled.div<{ bgPhoto: string }>`
       to bottom,
       rgba(0, 0, 0, 0.9),
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.8)
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 1)
     ),
     url(${(props) => props.bgPhoto});
   background-size: cover;
   background-position: center center;
-  padding-bottom: 250px;
+  padding-bottom: 12.5rem;
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 50px;
+    padding-left: 30px;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 48px;
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
+  @media screen and (max-width: 800px) {
+    font-size: 24px;
+    font-weight: 500;
+  }
 `;
 
 const Overview = styled.p`
-  font-size: 18px;
+  font-size: 1.125rem;
   width: 50%;
   font-weight: 400;
+  line-height: 1.5;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const Button = styled.div`
-  width: 150px;
-  height: 50px;
+  width: 9.375rem;
+  height: 3.125rem;
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-top: 30px;
   cursor: pointer;
   font-weight: 400;
   border-radius: 5px;
+  @media screen and (max-width: 800px) {
+    margin: 0;
+    width: 100px;
+    height: 30px;
+  }
 `;
