@@ -46,7 +46,7 @@ const Search = () => {
                 key={movie.id}
                 layoutId={movie.id + "" + "movie"}
               >
-                <Info variants={infoVariants}>
+                <Info>
                   <h4>{movie.title}</h4>
                 </Info>
               </Box>
@@ -67,7 +67,7 @@ const Search = () => {
                 key={tv.id}
                 layoutId={tv.id + "" + "tv"}
               >
-                <Info variants={infoVariants}>
+                <Info>
                   <h4>{tv.name}</h4>
                 </Info>
               </Box>
@@ -102,7 +102,6 @@ const Title = styled.h1`
 const Info = styled(motion.div)`
   padding: 10px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
-  opacity: 0;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -128,7 +127,3 @@ const Box = styled(motion.div)<{ bgPhoto: string }>`
   cursor: pointer;
   position: relative;
 `;
-
-const infoVariants = {
-  hover: { opacity: 1, transition: { delay: 0.1, duration: 0.2, type: "tween" } },
-};

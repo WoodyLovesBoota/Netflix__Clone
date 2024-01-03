@@ -77,7 +77,7 @@ const MovieRow = ({ data, title }: { data: IGetMoviesResult | undefined; title: 
                   whileHover={"hover"}
                   transition={{ type: "tween" }}
                 >
-                  <Info variants={infoVariants}>
+                  <Info>
                     <h4>{movie.title}</h4>
                   </Info>
                 </Box>
@@ -117,7 +117,6 @@ const Wrapper = styled.div`
 const Info = styled(motion.div)`
   padding: 10px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
-  opacity: 0;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -209,8 +208,4 @@ const boxVariants = {
     borderRadius: 10,
     transition: { duration: 0.5, type: "spring" },
   },
-};
-
-const infoVariants = {
-  hover: { opacity: 1, transition: { duration: 0.7, type: "spring" } },
 };
