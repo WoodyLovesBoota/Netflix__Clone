@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Netflix Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project ScreenShot0](https://firebasestorage.googleapis.com/v0/b/travelgo-6fa6a.appspot.com/o/Netflix%2FNeflix%2003.webp?alt=media&token=64a97313-499d-4500-a911-05c77eea7d4b)
+<br>
+<br>
 
-## Available Scripts
+## Netflix Clone은?
 
-In the project directory, you can run:
+스트리밍 서비스인 Netflix의 웹 인터페이스를 클론 코딩하는 것을 목표하였습니다. 사용자 인터페이스(UI) 디자인과 사용자 경험(UX)을 모방하여, 실제 Netflix와 유사한 웹 애플리케이션을 구축하였습니다.
+<br>
+<br>
 
-### `npm start`
+## 배포 링크
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[https://moonlit-cocada-e0073b.netlify.app/](https://moonlit-cocada-e0073b.netlify.app/)
+<br>
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 기술 스택
 
-### `npm test`
+- `Typescript`, `React`
+- `Axios`, `React Query`, `Framer`
+- `Prettier`, `Netlify`
+<br>
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 개발 기간
 
-### `npm run build`
+- 2023년 9월 - 2023년 10월
+<br>
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 프로젝트 상세
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React와 Typescript를 사용하여 UI를 구현하였습니다.
+- Axios와 React Query를 이용하여 영화 관련 정보를 제공해주는 Open API를 받아왔습니다.
+- Framer Motion을 이용하여 슬라이드 쇼 등 다양한 애니메이션을 구현하였습니다.
+<br><br>
 
-### `npm run eject`
+### 핵심 기능
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **영화 및 TV show 검색**: 사용자가 원하는 영화나 TV 프로그램을 찾을수 있습니다.
+- **카테고리 별 추천**: 다양한 카테고리에 따른 영화 및 TV 프로그램 추천 기능을 제공합니다.
+- **작품 세부정보 확인**: 선택한 작품의 상세 정보를 확인할 수 있습니다.
+<br><br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**영화 및 TV show 검색**
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Project ScreenShot2](https://firebasestorage.googleapis.com/v0/b/travelgo-6fa6a.appspot.com/o/Netflix%2F1704272217353.webp?alt=media&token=b1dd91a6-7321-40b6-adb3-c603e300ade4)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
 
-## Learn More
+**카테고리 별 추천**
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Project ScreenShot2](https://firebasestorage.googleapis.com/v0/b/travelgo-6fa6a.appspot.com/o/Netflix%2F1704271944869.webp?alt=media&token=9d17c798-dd29-470a-a120-4f5ff2e906ab)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
+
+**작품 세부정보 확인**
+<br>
+
+![Project ScreenShot3](https://firebasestorage.googleapis.com/v0/b/travelgo-6fa6a.appspot.com/o/Netflix%2FNeflix%2002.webp?alt=media&token=b5e96f11-7265-477a-b0ac-0dfd20528697)
+
+<br>
